@@ -1,13 +1,148 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+body{
+  background-color: #f7f7fa;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container{
+  max-width: 600px;
+  width: 90%;
+  margin: 1rem auto;
+}
+
+.control {
+  display: flex;
+}
+
+select{
+  text-transform: capitalize;
+  padding: 5px;
+  font-size: 14px;
+  margin-left: auto;
+  background-color: #d7d9df;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+select:focus{
+  border: 1px solid #d2c9f8;
+  box-shadow: 0 0 0 1px #dcdcf7;
+  outline: none;
+}
+
+h1{
+  color: #676e87;
+  text-transform: capitalize;
+  text-align: center;
+  font-weight: 600;
+}
+
+.btn {
+  text-transform: capitalize;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  padding: 8px 12px;
+}
+
+.add {
+  border-radius: 5px;
+  background-color: #7b89ba;
+}
+
+.add:hover{
+  background-color: #70799b;
+}
+
+.list {
+  background-color: #dbe4eb;
+  padding: 8px;
+  margin-top: 8px;
+  border-radius: 8px;
+}
+
+.list .item {
+  background-color: white;
+  border-radius: 8px;
+  margin: 4px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.list .item div{
+  margin-left: 4px;
+}
+.list .item h4{
+  font-weight: 400;
+  font-size: 14px;
+}
+.list .item p{
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.list .item i {
+  padding: 5px;
+  margin: 2px;
+  font-size: 13px;
+  background-color: #dbe4eb;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.list .item .fa-trash {
+  margin-left: auto;
+}
+
+.item label {
+  position: relative;
+  width: 26px;
+  height: 26px;
+}
+
+.item label input {
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  height: 26px;
+  width: 26px;
+  cursor: pointer;
+  background-color: #f0e8e8;
+  border-radius: 4px;
+}
+
+.checkmark:hover {
+  background-color: #ccc;
+}
+
+.item label input:checked ~ .checkmark {
+  background-color: #2077be;
+  transition: 0.4s;
+}
+
+.item label input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.item label .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 9px;
+  top: 2px;
+  width: 7px;
+  height: 14px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotateY(30deg) rotateZ(45deg) ;
 }
